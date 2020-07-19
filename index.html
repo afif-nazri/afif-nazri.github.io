@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <link rel="stylesheet" href="index.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+        <title>Animation</title>
+        <script>
+            var on = 1;
+            $(document).ready(function(){
+
+                
+                $('.left-box p').hide();
+                $('.p-right').hide();
+                
+
+                $(".left-box").mouseenter(function(){
+
+                   // $('.left-box').unbind('animate');
+
+                    $('.left-box').animate({
+                        width: '65%'
+                    }, 1000, 'easeInOutExpo');
+
+                    $('.takeaway').animate({
+                        left: '20%'
+                    }, 1000, 'easeInOutExpo');
+
+                    $('.dine-in').animate({
+                        right: '7%'
+                    }, 1000, 'easeInOutExpo');
+
+                    $('.delivery').animate({
+                        left: '22%',
+                        height: '250px',
+                        top: '10%'
+                    },1000, 'easeInOutExpo');
+
+                    $('.dine').animate({
+                        right: '7%',
+                        height: '200px',
+                        top: '18%'
+                    }, 1000, 'easeInOutExpo');
+
+                    
+                    if (on == 1){
+                        $('.left-box p').finish();
+                        $('.left-box p').fadeToggle(1500);
+                    }else{
+                        $('.p-right').finish();
+                        $('.left-box p').finish();
+                        $('.left-box p').fadeToggle(1500);
+                        $('.p-right').fadeToggle(100);
+                    }
+
+
+
+                 //   $('.left-box p').fadeToggle(1500);
+
+                 //    $('.p-right').fadeToggle(300);
+
+                 on = 0;
+                    
+                    
+
+
+                });
+
+                $('.left-box').mouseleave(function(){
+
+                  //  $('.left-box').unbind('animate');
+
+                    $('.left-box').animate({
+                        width: '35%'
+                    }, 1000, 'easeInOutExpo');
+
+                    $('.takeaway').animate({
+                        left: '50px'
+                    }, 1000, 'easeInOutExpo');
+
+                    $('.dine-in').animate({
+                        right: '23%'
+                    }, 1000, 'easeInOutExpo');
+
+                    $('.delivery').animate({
+                        left: '7%',
+                        height: '200px',
+                        top: '18%'
+                    }, 1000, 'easeInOutExpo');
+
+                    $('.dine').animate({
+                        right: '20%',
+                        height: '250px',
+                        top: '10%'
+                    }, 1000, 'easeInOutExpo');
+
+ 
+                    if (on == 1){
+                        $('.p-right').finish();
+                        $('.p-right').fadeToggle(2000);
+                    }else{
+                        $('.p-right').finish();
+                        $('.left-box p').finish();
+                        $('.left-box p').fadeToggle(100);
+                        $('.p-right').fadeToggle(2000);
+                    }
+
+                    on = 0;
+                    
+                    
+                    
+
+                });
+
+            });
+
+
+        </script>
+    </head>
+    <body>
+        <section class="container">
+            <h2 class="dine-in">Dine-in</h2>
+            <p class="p-right">Spend your time with <b>family & friends</b></p>
+            <img class="dine" src="index/man-woman-dating-restaurant/1x/Asset 1.png">
+            <div class="left-box">
+                <h2 class="takeaway">Takeaway</h2>
+                <img class="delivery" src="index/way-concept-illustration/1x/Asset 1.png">
+                <p class="p-left">Bringing a fragment of your <b>favorite restaurant</b> in your home</p>
+            </div>
+            
+        </section>
+    </body>
+</html>
